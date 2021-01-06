@@ -38,6 +38,8 @@ namespace WebApiGames.Features
             
         }
 
+     
+
 
         [Authorize]
         [HttpDelete]
@@ -45,7 +47,7 @@ namespace WebApiGames.Features
 
         public async Task<ActionResult> DeleteGame(int id)
         {
-            var userId = this.User.GetId();
+            var userId = this.currentUser.GetId();
 
             var deleted = await this.gameService.DeleteGame(id, userId);
 
@@ -57,6 +59,17 @@ namespace WebApiGames.Features
 
         }
 
+        [Authorize]
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IEnumerable<GameListRequestModel>> GetSingleGame(int id)
+        {
+
+
+            var game = await this.gameService.GetSingleGame(id);
+
+            return game;
+        }
 
         [Authorize]
         [HttpPost]

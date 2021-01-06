@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using WebApiGames.Infrastructure.Services;
+using WebApiGames.Features.Orders;
+using WebApiGames.Migrations;
 
 namespace WebApiGames.Infrastructure
 {
@@ -50,6 +52,7 @@ namespace WebApiGames.Infrastructure
                     .AddEntityFrameworkStores<UserDbContext>();
             return services;
         }
+ 
 
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services,AppSettings appSettings)
         {
@@ -80,7 +83,8 @@ namespace WebApiGames.Infrastructure
          => services
                  .AddTransient<IIdentityService, IdentityService>()
                  .AddScoped<ICurrentUserService,CurrentUserService>()
-                 .AddTransient<IGameService, GameService>();
+                 .AddTransient<IGameService, GameService>()
+                 .AddTransient<IOrderService, OrderService>();
 
 
         public static IServiceCollection AddSwagger(this IServiceCollection services)

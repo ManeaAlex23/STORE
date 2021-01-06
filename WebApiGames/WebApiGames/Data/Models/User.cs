@@ -5,6 +5,7 @@ namespace WebApiGames.Features
     using Microsoft.AspNetCore.Identity;
     using System;
     using System.Collections.Generic;
+    using WebApiGames.Data.Models;
     using WebApiGames.Data.Models.Base;
     using WebApiGames.Models;
 
@@ -19,6 +20,8 @@ namespace WebApiGames.Features
         public string ModifiedBy { get; set; }
 
         public IEnumerable<GamesReq> Games { get; } = new HashSet<GamesReq>();
+
+        public IEnumerable<OrdersReq> Orders { get; } = new HashSet<OrdersReq>();
 
     }
 }

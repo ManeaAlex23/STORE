@@ -63,6 +63,7 @@ namespace WebApiGames.Features.Games
                 => await this.data
                         .Games
                         //.Where(c => c.UserId == userId) //If UserId exists in DB //UserId valid.
+                        .OrderByDescending(c => c.Id)
                         .Select(c => new GameListRequestModel
                         {
 
@@ -77,6 +78,25 @@ namespace WebApiGames.Features.Games
                             NumberOfUnits = c.NumberOfUnits
                         })
                         .ToListAsync();
+
+        public async Task<IEnumerable<GameListRequestModel>> GetSingleGame(int id)
+                => await this.data
+                            .Games
+                            .Where(c => c.Id == id)
+                            .Select(c => new GameListRequestModel
+                            {
+                                Id = c.Id,
+                                Title = c.Title,
+                                Description = c.Description,
+                                ImageUrl = c.ImageUrl,
+                                YoutubeUrl = c.YoutubeUrl,
+                                AgeCategory = c.AgeCategory,
+                                Price = c.Price,
+                                Disponibility = c.Disponibility,
+                                NumberOfUnits = c.NumberOfUnits
+
+                            })
+                            .ToListAsync();
 
         public async Task<bool> UpdateGame(int id, string title, string description, string imageUrl, string youtubeUrl, string agecategory, float price, bool disponibility, int units, string userId)
         {

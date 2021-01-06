@@ -12,6 +12,7 @@ namespace WebApiGames.Features
     using System.Linq;
     using WebApiGames.Data.Models.Base;
     using WebApiGames.Infrastructure.Services;
+    using WebApiGames.Data.Models;
 
     public class UserDbContext : IdentityDbContext<User>
     {
@@ -24,13 +25,14 @@ namespace WebApiGames.Features
         }
 
         public DbSet<GamesReq> Games { get; set; }
+        public DbSet<OrdersReq> Orders { get; set; }
 
 
-        public override int SaveChanges()
+      /*  public override int SaveChanges()
         {
             this.ApplyAuditInfo();
             return base.SaveChanges();
-        }
+        }*/
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {
             this.ApplyAuditInfo();
@@ -41,22 +43,29 @@ namespace WebApiGames.Features
             this.ApplyAuditInfo();
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+     /*   public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             this.ApplyAuditInfo();
             return base.SaveChangesAsync(cancellationToken);
-        }
+        }*/
        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder
                 .Entity<GamesReq>()
+                .HasQueryFilter(g => !g.isDeleted)
                 .HasOne(g => g.User)
                 .WithMany(u => u.Games)
                 .HasForeignKey(g => g.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-
+            builder
+                .Entity<OrdersReq>()
+                .HasQueryFilter(o => !o.isDeleted)
+                .HasOne(o => o.User)
+                .WithMany(u => u.Orders)
+                .HasForeignKey(o => o.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(builder);
         }
@@ -74,13 +83,15 @@ namespace WebApiGames.Features
                 {
                     var userName = this.currentUser.GetUserName();
 
-                    if (entry.Entity is IDeletableEntity deletable)
+                    if (entry.Entity is IDeletableEntity deletable) 
                     {
-                        if(entry.State == EntityState.Deleted)
+                        if (entry.State == EntityState.Deleted)
                         {
                             deletable.DeletedOn = DateTime.UtcNow;
                             deletable.DeletedBy = userName;
-
+                            deletable.isDeleted = true;
+                            //Problem here big bug
+                            return;
                         }
                                                                      
                     }
