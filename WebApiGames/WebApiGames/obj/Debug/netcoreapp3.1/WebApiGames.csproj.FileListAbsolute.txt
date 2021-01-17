@@ -72,4 +72,5 @@ D:\WebAPIGames\WebApiGames\WebApiGames\bin\Debug\netcoreapp3.1\Swashbuckle.AspNe
 D:\WebAPIGames\WebApiGames\WebApiGames\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\WebAPIGames\WebApiGames\WebApiGames\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\WebAPIGames\WebApiGames\WebApiGames\obj\Debug\netcoreapp3.1\WebApiGames.MvcApplicationPartsAssemblyInfo.cs
-D:\WebAPIGames\WebApiGames\WebApiGames\bin\Debug\netcoreapp3.1\Tulpep.PayULibrary.dll
+D:\WebAPIGames\WebApiGames\WebApiGames\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\WebAPIGames\WebApiGames\WebApiGames\bin\Debug\netcoreapp3.1\Stripe.net.dll

@@ -12,6 +12,7 @@ using Microsoft.OpenApi.Models;
 using WebApiGames.Infrastructure.Services;
 using WebApiGames.Features.Orders;
 using WebApiGames.Migrations;
+using WebApiGames.Features.MakePayment;
 
 namespace WebApiGames.Infrastructure
 {
@@ -82,9 +83,10 @@ namespace WebApiGames.Infrastructure
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
          => services
                  .AddTransient<IIdentityService, IdentityService>()
-                 .AddScoped<ICurrentUserService,CurrentUserService>()
+                 .AddScoped<ICurrentUserService, CurrentUserService>()
                  .AddTransient<IGameService, GameService>()
-                 .AddTransient<IOrderService, OrderService>();
+                 .AddTransient<IOrderService, OrderService>()
+                 .AddTransient<IMakePaymentInterface, MakePaymentService>();
 
 
         public static IServiceCollection AddSwagger(this IServiceCollection services)
