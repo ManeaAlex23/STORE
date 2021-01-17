@@ -17,7 +17,7 @@ namespace WebApiGames.Features.Games
         {
             this.data = data;
         }
-        public async Task<int> Create(string title, string description, string imageUrl,string youtubeUrl, string agecategory, float price, bool disponibility, int units, string UserId)
+        public async Task<int> Create(string title, string description, string imageUrl,string youtubeUrl,int numberoflikes,int numeberofdislikes, string agecategory, float price, bool disponibility, int units, string UserId)
         {
             var game = new GamesReq
             {
@@ -25,6 +25,8 @@ namespace WebApiGames.Features.Games
                 Description = description,
                 ImageUrl = imageUrl,
                 YoutubeUrl = youtubeUrl,
+                NumberofLikes = numberoflikes,
+                NumberofDislikes = numeberofdislikes,
                 AgeCategory = agecategory,
                 Price = price,
                 Disponibility = disponibility,
@@ -72,6 +74,8 @@ namespace WebApiGames.Features.Games
                             Description = c.Description,
                             ImageUrl = c.ImageUrl,
                             YoutubeUrl = c.YoutubeUrl,
+                            NumberofLikes = c.NumberofLikes,
+                            NumberofDislikes = c.NumberofDislikes,
                             AgeCategory = c.AgeCategory,
                             Price = c.Price,
                             Disponibility = c.Disponibility,
@@ -90,6 +94,8 @@ namespace WebApiGames.Features.Games
                                 Description = c.Description,
                                 ImageUrl = c.ImageUrl,
                                 YoutubeUrl = c.YoutubeUrl,
+                                NumberofLikes = c.NumberofLikes,
+                                NumberofDislikes = c.NumberofDislikes,
                                 AgeCategory = c.AgeCategory,
                                 Price = c.Price,
                                 Disponibility = c.Disponibility,
@@ -98,7 +104,7 @@ namespace WebApiGames.Features.Games
                             })
                             .ToListAsync();
 
-        public async Task<bool> UpdateGame(int id, string title, string description, string imageUrl, string youtubeUrl, string agecategory, float price, bool disponibility, int units, string userId)
+        public async Task<bool> UpdateGame(int id, string title, string description, string imageUrl, string youtubeUrl, int numberoflikes, int numeberofdislikes, string agecategory, float price, bool disponibility, int units, string userId)
         {
             var game = await this.data
                     .Games
@@ -118,6 +124,10 @@ namespace WebApiGames.Features.Games
 
             game.YoutubeUrl = youtubeUrl;
 
+            game.NumberofLikes = numberoflikes;
+
+            game.NumberofDislikes = numeberofdislikes;
+
             game.AgeCategory = agecategory;
 
             game.Price = price;
@@ -125,6 +135,40 @@ namespace WebApiGames.Features.Games
             game.Disponibility = disponibility;
 
             game.NumberOfUnits = units;
+
+            await this.data.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> UpdateNumberofLikes(int id,string userId)
+        {
+            var game = await this.data
+                            .Games
+                            .Where(c => c.Id == id)
+                            .FirstOrDefaultAsync();
+            if (game == null)
+            {
+                return false;
+            }
+            game.NumberofLikes += 1;
+
+            await this.data.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> UpdateNumberofDislikes(int id, string userId)
+        {
+            var game = await this.data
+                                .Games
+                                .Where(c => c.Id == id)
+                                .FirstOrDefaultAsync();
+            if (game == null)
+            {
+                return false;
+            }
+            game.NumberofDislikes += 1;
 
             await this.data.SaveChangesAsync();
 

@@ -1955,6 +1955,17 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Tulpep.PayULibrary/1.0.83": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {},
+          "lib/net45/Tulpep.PayULibrary.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {},
+          "lib/net45/Tulpep.PayULibrary.dll": {}
+        }
       }
     }
   },
@@ -6761,6 +6772,19 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Tulpep.PayULibrary/1.0.83": {
+      "sha512": "uqu5HX0zhSQXXQBHxuN4ifbewlAbf2nAtRj3o9nLRffZwC5qWNjXd0SP93rgB9oU9FefnFYYWzk6rzQ+NKrPqw==",
+      "type": "package",
+      "path": "tulpep.payulibrary/1.0.83",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Tulpep.PayULibrary.dll",
+        "tulpep.payulibrary.1.0.83.nupkg.sha512",
+        "tulpep.payulibrary.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -6771,7 +6795,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.0",
-      "Swashbuckle.AspNetCore >= 5.6.3"
+      "Swashbuckle.AspNetCore >= 5.6.3",
+      "Tulpep.PayULibrary >= 1.0.83"
     ]
   },
   "packageFolders": {
@@ -6842,6 +6867,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[5.6.3, )"
+          },
+          "Tulpep.PayULibrary": {
+            "target": "Package",
+            "version": "[1.0.83, )"
           }
         },
         "imports": [
@@ -6865,5 +6894,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Tulpep.PayULibrary 1.0.83' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Tulpep.PayULibrary",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

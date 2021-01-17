@@ -21,6 +21,12 @@ namespace WebApiGames.Features.Games
         public string YoutubeUrl { get; set; }
 
         [Required]
+        public int NumberofLikes { get; set; }
+
+        [Required]
+        public int NumberofDislikes { get; set; }
+
+        [Required]
         public string AgeCategory { get; set; }
 
         [Required]

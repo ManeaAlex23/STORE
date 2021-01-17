@@ -86,6 +86,8 @@ namespace WebApiGames.Features
                         model.Description,
                         model.ImageUrl,
                         model.YoutubeUrl,
+                        model.NumberofLikes,
+                        model.NumberofDislikes,
                         model.AgeCategory,
                         model.Price,
                         model.Disponibility,
@@ -109,6 +111,8 @@ namespace WebApiGames.Features
                                     model.Description,
                                     model.ImageUrl,
                                     model.YoutubeUrl,
+                                    model.NumberofLikes,
+                                    model.NumberofDislikes,
                                     model.AgeCategory,
                                     model.Price,
                                     model.Disponibility,
@@ -122,6 +126,46 @@ namespace WebApiGames.Features
             }
             return Ok();
         }
+
+        [Authorize]
+        [HttpPut]
+        [Route("{id}/like")]
+        public async Task<ActionResult> UpdateNumberofLikes(GameUpdateRequestModel model)
+        {
+            var userId = this.currentUser.GetId();
+
+            var updated = await this.gameService.UpdateNumberofLikes(
+                                                model.Id,
+                                                userId
+                                                );
+            if (!updated)
+            {
+                return BadRequest();
+            }
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("{id}/dislike")]
+        public async Task<ActionResult> UpdateNumberofDislikes(GameListRequestModel model)
+        {
+            var userId = this.currentUser.GetId();
+
+            var update = await this.gameService.UpdateNumberofDislikes(
+                                            model.Id,
+                                            userId
+                                            );
+
+            if (!update)
+            {
+                return BadRequest();
+            }
+            return Ok();
+        }
+
+       
+
 
 
       

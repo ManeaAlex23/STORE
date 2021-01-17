@@ -70,6 +70,18 @@ namespace WebApiGames.Features.Orders
             }
 
             [Authorize]
+            [HttpGet]
+            [Route("/user")]
+            public async Task<IEnumerable<OrderListRequestByUserModel>> GetOrdersByUser()
+            {
+                var userId = this.currentUser.GetId();
+
+                var orders = await this.orderService.GetOrdersByUser(userId);
+
+                return orders;
+            }
+
+            [Authorize]
             [HttpPut]
 
             public async Task<ActionResult> UpdateOrder(OrderUpdateRequestModel model)

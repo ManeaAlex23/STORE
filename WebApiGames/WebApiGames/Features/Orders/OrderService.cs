@@ -64,6 +64,7 @@ namespace WebApiGames.Features.Orders
         public async Task<IEnumerable<OrdersListRequestModel>> GetOrders(string userId)
            => await this.data
                       .Orders
+                      .Where(o=>o.UserId==userId)
                       .OrderByDescending(o => o.CreatedOn)
                       .Select(o => new OrdersListRequestModel
                       {
@@ -80,6 +81,26 @@ namespace WebApiGames.Features.Orders
 
                       })
                       .ToListAsync();
+
+        public async Task<IEnumerable<OrderListRequestByUserModel>> GetOrdersByUser(string userId)
+                => await this.data
+                            .Orders
+                            .Where(o => o.UserId == userId)
+                            .OrderByDescending(o => o.CreatedOn)
+                            .Select(o => new OrderListRequestByUserModel
+                            {
+                                Id = o.Id,
+                                DeliverAdress = o.DeliverAdress,
+                                City = o.City,
+                                GameId = o.GameId,
+                                IsProcesed = o.IsProcesed,
+                                CurrentCurierLocation =o .CurrentCurierLocation,
+                                RentedHours = o.RentedHours,
+                                ClientPhoneNumber = o.ClientPhoneNumber,
+                                CurrierPhoneNumber = o.CurrierPhoneNumber
+
+                            })
+                            .ToListAsync();
 
 
         public async Task<bool> UpdateOrder(int id,string deliveraddr, string city, int gameId, string userid, bool isProcces, bool isDelivered, string currentCurrierLocation, int rentHours, string clientPhone, string currierPhone)

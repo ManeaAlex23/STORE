@@ -31,6 +31,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
+          "Tulpep.PayULibrary": "1.0.83",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -947,15 +948,6 @@
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.1.20720"
-          }
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -1659,6 +1651,22 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Tulpep.PayULibrary/1.0.83": {
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.3.21018"
+          },
+          "lib/net45/Tulpep.PayULibrary.dll": {
+            "assemblyVersion": "1.0.83.0",
+            "fileVersion": "1.0.83.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {},
+          "lib/net45/Tulpep.PayULibrary.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -4174,6 +4182,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Tulpep.PayULibrary/1.0.83": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uqu5HX0zhSQXXQBHxuN4ifbewlAbf2nAtRj3o9nLRffZwC5qWNjXd0SP93rgB9oU9FefnFYYWzk6rzQ+NKrPqw==",
+      "path": "tulpep.payulibrary/1.0.83",
+      "hashPath": "tulpep.payulibrary.1.0.83.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",

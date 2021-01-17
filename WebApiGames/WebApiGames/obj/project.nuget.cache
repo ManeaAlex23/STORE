@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JEqIva7XdYj3qiR5qHCIYxMUJNinwOFYLLgoEo3+QAFjFI8jp5YXWJysTogsoPqVQhV8P/aDoqPBbZ2ZYXpJ4w==",
+  "dgSpecHash": "GhzRBN/6GKzv7UBclcmsbHzrMmIEDh1r+7EPttF9rqJk0OWCdtvbynoZB7yYGrHNh42+vzZLNVhoFHedr42wqg==",
   "success": true,
   "projectFilePath": "D:\\WebAPIGames\\WebApiGames\\WebApiGames\\WebApiGames.csproj",
   "expectedPackageFiles": [
@@ -133,7 +133,19 @@
     "C:\\Users\\manea\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\manea\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\manea\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\manea\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\manea\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\manea\\.nuget\\packages\\tulpep.payulibrary\\1.0.83\\tulpep.payulibrary.1.0.83.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Tulpep.PayULibrary 1.0.83' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Tulpep.PayULibrary",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

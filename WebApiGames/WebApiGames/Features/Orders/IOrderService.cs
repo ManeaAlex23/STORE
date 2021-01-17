@@ -11,6 +11,8 @@ namespace WebApiGames.Features.Orders
 
         public Task<IEnumerable<OrdersListRequestModel>> GetOrders(string userId);
 
+        public Task<IEnumerable<OrderListRequestByUserModel>> GetOrdersByUser(string userId);
+
         public Task<bool> UpdateOrder(int id,string deliveraddr, string city, int gameId, string userid, bool isProcces, bool isDelivered, string currentCurrierLocation, int rentHours, string clientPhone, string currierPhone);
 
         public Task<bool> DeleteGame(int id, string userId);
