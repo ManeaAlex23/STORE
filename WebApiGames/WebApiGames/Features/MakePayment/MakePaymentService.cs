@@ -14,7 +14,7 @@ namespace WebApiGames.Features.MakePayment
         {
             try
             {
-                StripeConfiguration.ApiKey = "pk_test_51IAUaXFVuNXPug7N4U9f0Km2MlV3ohxC1LCRuLpuNZNEDBc5kx9oiL0ICdjXEOGUrdXN6fOGw2g8G8B1DkcV2Uu900heVYyB73";
+                StripeConfiguration.ApiKey = "sk_test_51IAUaXFVuNXPug7NxK03RmG6oWNENC9iiOfgaewrlu8OBu2VZHNZ9XKLVZ9HbKpfDeEEDRv4hTpERFatn1nlVkza00qcAEBJuh";
 
                 var optionstoken = new TokenCreateOptions
                 {
@@ -33,7 +33,7 @@ namespace WebApiGames.Features.MakePayment
                 var options = new ChargeCreateOptions
                 {
                     Amount = value,
-                    Currency = "lei",
+                    Currency = "ron",
                     Description = "test",
                     Source = stripetoken.Id
                 };

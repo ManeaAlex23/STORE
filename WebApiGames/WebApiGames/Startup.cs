@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApiGames.Infrastructure;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 
 namespace WebApiGames
@@ -27,6 +29,7 @@ namespace WebApiGames
                 .AddSwagger()
                 .AddApplicationServices()
                 .AddControllers();
+               
              
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

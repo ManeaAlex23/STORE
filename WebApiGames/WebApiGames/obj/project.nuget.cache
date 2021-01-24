@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dOiFzWUR4CjCgCw4roHnsHpLDdm/9sYkxNpouXhy2AUxFgjxVGZ+nJsu16UCFc814e41xSeFC6MnICpMOYByJw==",
+  "dgSpecHash": "L004aJT/ECrc3yF6o5ko++mBSvanWfJKjbYimgVw8LTWNZQ/ga36fX+DwojWaRO9tPcS/t3kZmIMPJ/sXR3zTg==",
   "success": true,
   "projectFilePath": "D:\\WebAPIGames\\WebApiGames\\WebApiGames\\WebApiGames.csproj",
   "expectedPackageFiles": [
@@ -60,7 +60,7 @@
     "C:\\Users\\manea\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\manea\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\manea\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\manea\\.nuget\\packages\\newtonsoft.json\\11.0.1\\newtonsoft.json.11.0.1.nupkg.sha512",
+    "C:\\Users\\manea\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\manea\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\manea\\.nuget\\packages\\stripe.net\\39.32.0\\stripe.net.39.32.0.nupkg.sha512",
     "C:\\Users\\manea\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
